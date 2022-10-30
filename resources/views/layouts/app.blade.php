@@ -7,80 +7,117 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> СК "SIN TYAO"</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <link href="{{asset('css/framework.css')}}" rel="stylesheet">
+    <link href="{{asset('css/layout.css')}}" rel="stylesheet">
+    <link href="{{asset('css/windows_modal.css')}}" rel="stylesheet">
+   
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link href="{{asset('css/main.css')}}" rel="stylesheet">
 
 </head>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+   
+<!-- Ряд 0, регистрация и авторизация -->
+<div class="wrapper row0">
+      <div id="topbar" class="hoc clear"> 
+        
+              <div class="fl_left">
+          <ul class="nospace inline pushright">
+            <li>+375 (29) 187-55-26</li>
+            <li>dz.artsiomi@gmail.com</li>
+          </ul>
+        </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+        
+        <div class="fl_right">
+          <ul class="nospace inline pushright">
 
-                    </ul>
+          @guest
+            @if (Route::has('login'))
+            <li>
+                <a href="{{ route('login') }}">Авторизация</a>
+            </li>
+                @endif
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        <li class="nav-item">
-                                    <a class="nav-link" href="#">Контакты</a>
-                                </li>
-
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Авторизация</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Выйти
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+            @if (Route::has('register'))
+            <li>
+                <a href="{{ route('register') }}">Регистрация</a>
+            </li>
+            @endif
+          </ul>
+        </div>
+        @endguest
+      </div>
     </div>
+
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+
+          <!-- ЛОГО -->
+          <div id="logo" class="fl_left">
+            <h1><a href="{{ url('/') }}">SIN TYAO</a></h1>
+          </div>
+                  
+        </header>
+      </div>
+
+      <!-- НАВИГАЦИЯ -->
+
+      <div class="wrapper row2">
+        <nav id="mainav" class="hoc clear"> 
+          <ul class="clear">
+            <li class="active"><a href="#">Главная</a></li>
+            <li><a href="#">Журнал</a>
+                <ul>
+                <li><a href="#">Фотогалерея</a></li>
+                <li><a href="#">Видеогалерея</a></li>
+                </ul>
+            </li>
+            <li><a href="#">О нас</a>
+              <ul>
+                <li><a href="#">История</a></li>
+                <li><a href="#">Тренерский состав</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Контакты</a></li>
+            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопрос/ответ</a></li>
+            </ul>
+        </nav>
+      </div>
+
+
+      
+      <div id="subject" class="modal_modal">
+  <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
+  <form class="modal_content" method="post" action="qustion.php">
+    <div class="modal_container">
+      <h2>Задайте нам вопрос и мы обязательно на него ответим!</h2>
+      <p>Пожалуйста, заполните эту форму, чтобы задать нам вопрос.</p>
+      <hr>
+
+      <label>ФИО</label>
+      <input type="text" name="name" placeholder="Введите полное имя" required>
+              
+      <label">Email</label>
+      <input type="text" name="email" placeholder="Введите электронную почту" required>
+    
+      <label><h2>Введите Ваш вопрос:</h2></label>
+      <textarea name="qustion" placeholder="Введите вопрос" style="height:200px"></textarea>
+      
+      <div class="modal_clearfix">
+        <button type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
+        <button type="submit" class="modal_signupbtn">Отправить</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
 </body>
 </html>

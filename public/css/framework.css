@@ -1,0 +1,448 @@
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.inline * {
+    display: inline-block;
+}
+
+.inline *:last-child {
+    margin-right: 0;
+}
+
+.pushright li {
+    margin-right: 20px;
+}
+
+.pushright li:last-child {
+    margin-right: 0;
+}
+
+.borderedbox {
+    border: 1px solid;
+}
+
+
+.clear {
+    display: block;
+}
+
+.clear::before, .clear::after {
+    display: table;
+    content: "";
+}
+
+.clear, .clear::after {
+    clear: both;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+
+.fl_left {
+    float: left;
+}
+
+.fl_right {
+    float: right;
+}
+
+/* ФОН
+--------------------------------------------------------------------------------------------------------------- */
+body, input, textarea {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Класс «hoc» — это универсальный класс, используемый для центрирования содержащего элемента по горизонтали. */
+.hoc {
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* Top Bar
+--------------------------------------------------------------------------------------------------------------- */
+#topbar {
+    padding: 5px 0;
+    font-size: 12px;
+}
+
+#topbar i {
+    margin: 0 5px 0 0;
+    line-height: normal;
+}
+
+
+/* Заголовк */
+
+#header {
+    padding: 30px 0;
+}
+
+#header #logo {
+    margin-top: 3px;
+    font-variant: small-caps;
+}
+
+#header #logo h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+}
+
+#header form {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+#header input, #header button {
+    display: block;
+    height: 36px;
+    border: none;
+}
+
+#header input {
+    width: 100%;
+    min-width: 250px;
+    padding: 5px 40px 5px 15px;
+}
+
+#header button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 32px;
+    height: 34px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Затухание перехода */
+
+*, *::before, *::after {
+    transition: all .3s ease-in-out;
+}
+
+#mainav form * {
+    transition: none !important;
+}
+
+/* Навигация */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#mainav {
+    line-height: normal;
+}
+
+#mainav .drop::after, #mainav li li .drop::after {
+    position: absolute;
+    font-family: "FontAwesome";
+    font-size: 10px;
+    line-height: 10px;
+}
+
+/* Верхняя навигация */
+#mainav ul {
+    text-transform: uppercase;
+}
+
+#mainav ul ul {
+    z-index: 9999;
+    position: absolute;
+    width: 180px;
+    text-transform: none;
+    font-weight: 400;
+}
+
+#mainav ul ul ul {
+    left: 180px;
+    top: 0;
+}
+
+#mainav li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px 0 0;
+    padding: 0;
+}
+
+#mainav li:last-child {
+    margin-right: 0;
+}
+
+#mainav li li {
+    width: 100%;
+    margin: 0;
+}
+
+#mainav li a {
+    display: block;
+    padding: 20px 0;
+}
+
+#mainav li li a {
+    border: solid;
+    border-width: 0 0 1px 0;
+}
+
+#mainav .drop {
+    padding-left: 15px;
+}
+
+#mainav li li a, #mainav li li .drop {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+#mainav .drop::after {
+    top: 25px;
+    left: 5px;
+}
+
+#mainav li li .drop::after {
+    top: 15px;
+    left: 5px;
+}
+
+#mainav ul ul {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#mainav ul li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+#mainav form {
+    display: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Цвета */
+
+
+/* Ряды */
+.row0, .row0 a {
+    color: #4A4A4A;
+    background-color: #F2F1EE;
+}
+
+.row1 {
+    color: #FFFFFF;
+    background-color: #3C4348;
+}
+
+.row2 {
+    color: #FFFFFF;
+    background-color: #212427;
+}
+
+/* Заголовок */
+#header #logo * {
+    color: inherit;
+}
+
+#header input, #header button {
+    color: #FFFFFF;
+    background-color: #212427;
+}
+
+#header button {
+    color: #00BCDF;
+}
+
+/* Навигация */
+#mainav li a {
+    color: inherit;
+    background-color: inherit;
+}
+
+#mainav .active a, #mainav a:hover, #mainav li:hover>a {
+    color: #00BCDF;
+    background-color: inherit;
+}
+
+#mainav li li a, #mainav .active li a {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .6);
+    border-color: rgba(0, 0, 0, .6);
+}
+
+#mainav li li:hover>a, #mainav .active .active>a {
+    color: #FFFFFF;
+    background-color: #00BCDF;
+}
+
+#mainav form select {
+    color: #FFFFFF;
+    background-color: #3C4348;
+}
+
+/* Вопрос/ответ */
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* Media Queries
+--------------------------------------------------------------------------------------------------------------- */
+@-ms-viewport {
+    width: device-width;
+}
+
+
+/* Max Wrapper Width - Laptop, Desktop etc.
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width:978px) {
+    .hoc {
+        max-width: 978px;
+    }
+}
+
+/* Other
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:650px) {
+
+    .inline li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .pushright li {
+        margin-right: 0;
+    }
+
+    /* Mobile Devices
+--------------------------------------------------------------------------------------------------------------- */
+    @media screen and (max-width:900px) {
+        .hoc {
+            max-width: 90%;
+        }
+
+
+        #mainav {
+            padding: 20px 0;
+        }
+
+        #mainav ul {
+            display: none;
+        }
+
+        #mainav form {
+            display: block;
+        }
+    }
+
+
+    @media screen and (max-width:750px) {
+        .imgl {
+            display: inline-block;
+            float: none;
+            margin: 0 0 10px 0;
+        }
+
+        .fl_left, .fl_right {
+            display: block;
+            float: none;
+        }
+
+        #topbar {
+            text-align: center;
+        }
+
+        #topbar * {
+            margin: 0;
+        }
+
+        #topbar ul {
+            margin: 0 0 10px 0;
+            line-height: normal;
+        }
+
+        #topbar ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        #topbar ul li:last-child {
+            margin-right: 0;
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        #header #logo {
+            margin: 0 0 30px 0;
+        }
+    }
