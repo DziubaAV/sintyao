@@ -24,42 +24,41 @@
 <body>
    
 <!-- Ряд 0, регистрация и авторизация -->
-<div class="wrapper row0">
+    <div class="wrapper row0">
       <div id="topbar" class="hoc clear"> 
-        
-              <div class="fl_left">
+        <div class="fl_left">
           <ul class="nospace inline pushright">
-            <li>+375 (29) 187-55-26</li>
-            <li>dz.artsiomi@gmail.com</li>
+            <li> <a href="tel:+375291875526">+375 (29) 187-55-26</a></li>
+            <li><a href="mailto:dz.artsiomi@gmail.com">dz.artsiomi@gmail.com</a></li>
           </ul>
         </div>
 
         
         <div class="fl_right">
           <ul class="nospace inline pushright">
-
-          @guest
+            @guest
             @if (Route::has('login'))
-            <li>
+              <li>
                 <a href="{{ route('login') }}">Авторизация</a>
-            </li>
-                @endif
+              </li>
+            @endif
 
             @if (Route::has('register'))
-            <li>
+              <li>
                 <a href="{{ route('register') }}">Регистрация</a>
-            </li>
+              </li>
             @endif
+            @endguest
           </ul>
         </div>
-        @endguest
+        
       </div>
     </div>
 
-    <div class="wrapper row1">
+      <div class="wrapper row1">
         <header id="header" class="hoc clear">
 
-          <!-- ЛОГО -->
+          <!-- Logo -->
           <div id="logo" class="fl_left">
             <h1><a href="{{ url('/') }}">SIN TYAO</a></h1>
           </div>
@@ -94,30 +93,29 @@
 
       
       <div id="subject" class="modal_modal">
-  <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
-  <form class="modal_content" method="post" action="qustion.php">
-    <div class="modal_container">
-      <h2>Задайте нам вопрос и мы обязательно на него ответим!</h2>
-      <p>Пожалуйста, заполните эту форму, чтобы задать нам вопрос.</p>
-      <hr>
+        <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
+            <form class="modal_content" method="post" action="qustion.php">
+              <div class="modal_container">
+                  <h2>Задайте нам вопрос и мы обязательно на него ответим!</h2>
+                    <p>Пожалуйста, заполните эту форму, чтобы задать нам вопрос.</p>
+                    <hr>
 
-      <label>ФИО</label>
-      <input type="text" name="name" placeholder="Введите полное имя" required>
+                        <label>ФИО</label>
+                        <input type="text" name="name" placeholder="Введите полное имя" required>
               
-      <label">Email</label>
-      <input type="text" name="email" placeholder="Введите электронную почту" required>
+                        <label">Email</label>
+                        <input type="text" name="email" placeholder="Введите электронную почту" required>
     
-      <label><h2>Введите Ваш вопрос:</h2></label>
-      <textarea name="qustion" placeholder="Введите вопрос" style="height:200px"></textarea>
+                        <label><h2>Введите Ваш вопрос:</h2></label>
+                        <textarea name="qustion" placeholder="Введите вопрос" style="height:200px"></textarea>
       
-      <div class="modal_clearfix">
-        <button type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
-        <button type="submit" class="modal_signupbtn">Отправить</button>
+                          <div class="modal_clearfix">
+                            <button type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
+                            <button type="submit" class="modal_signupbtn">Отправить</button>
+                          </div>
+              </div>
+            </form>
       </div>
 
-    </div>
-  </form>
-</div>
-
-</body>
+    </body>
 </html>
