@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> СК "SIN TYAO"</title>
+    <title> СК "SIN TYAO" </title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,29 +29,40 @@
         <div class="fl_left">
           <ul class="nospace inline pushright">
             <li> <a href="tel:+375291875526">+375 (29) 187-55-26</a></li>
-            <li><a href="mailto:dz.artsiomi@gmail.com">dz.artsiomi@gmail.com</a></li>
-          </ul>
-        </div>
+              <li><a href="mailto:dz.artsiomi@gmail.com" target="_blank">dz.artsiomi@gmail.com</a></li>
+                </ul>
+                  </div>
 
-        
-        <div class="fl_right">
-          <ul class="nospace inline pushright">
-            @guest
-            @if (Route::has('login'))
-              <li>
-                <a href="{{ route('login') }}">Авторизация</a>
-              </li>
-            @endif
+                    <div class="fl_right">
+                      <ul class="nospace inline pushright">
+                      @guest
+                      @if (Route::has('login'))
+                        <li><a href="{{ route('login') }}">Авторизация</a></li>
+                      @endif
 
-            @if (Route::has('register'))
-              <li>
-                <a href="{{ route('register') }}">Регистрация</a>
-              </li>
-            @endif
-            @endguest
-          </ul>
-        </div>
-        
+                      @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}">Регистрация</a></li>                 
+                      @endif
+                      @else
+
+                            <!-- Выход из учетных данных -->
+                            <li class="nav-item dropdown">
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
+                                    {{ Auth::user()->name }}
+                                
+                                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                                      Выйти
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
       </div>
     </div>
 
@@ -60,7 +71,7 @@
 
           <!-- Logo -->
           <div id="logo" class="fl_left">
-            <h1><a href="{{ url('/') }}">SIN TYAO</a></h1>
+            <h1 class="navbar-brand" href="{{ asset('/')}}">SIN TYAO</h1>
           </div>
                   
         </header>
@@ -71,11 +82,11 @@
       <div class="wrapper row2">
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
-            <li class="active"><a href="#">Главная</a></li>
+            <li class="active"><a href="{{ asset('/')}}">Главная</a></li>
             <li><a href="#">Журнал</a>
                 <ul>
-                <li><a href="#">Фотогалерея</a></li>
-                <li><a href="#">Видеогалерея</a></li>
+                <li><a href="{{ asset('catalog/foto') }}">Фотогалерея</a></li>
+                <li><a href="{{ asset('catalog/video') }}">Видеогалерея</a></li>
                 </ul>
             </li>
             <li><a href="#">О нас</a>
@@ -101,13 +112,13 @@
                     <hr>
 
                         <label>ФИО</label>
-                        <input type="text" name="name" placeholder="Введите полное имя" required>
+                        <input type="Modaltext" name="name" placeholder="Введите полное имя" required>
               
                         <label">Email</label>
-                        <input type="text" name="email" placeholder="Введите электронную почту" required>
+                        <input type="Modaltext" name="email" placeholder="Введите электронную почту" required>
     
                         <label><h2>Введите Ваш вопрос:</h2></label>
-                        <textarea name="qustion" placeholder="Введите вопрос" style="height:200px"></textarea>
+                        <textarea name="qustion" placeholder="Введите вопрос" style="height:100px"></textarea>
       
                           <div class="modal_clearfix">
                             <button type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
@@ -116,6 +127,10 @@
               </div>
             </form>
       </div>
+
+      <main class="py-4">
+            @yield('content')
+        </main>
 
     </body>
 </html>
