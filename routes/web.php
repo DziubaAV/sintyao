@@ -19,5 +19,5 @@ Route::get("/",[Controllers\BaseController::class,"getIndex"]);
 Auth::routes();
 
 Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/catalog/{type}',[Controllers\CatalogController::class, 'getIndex']);
-Route::get('/catalog_one/{catalog}',[Controllers\CatalogController::class, 'getOne']);
+Route::get('/catalog/{type}', [Controllers\CatalogController::class, 'getIndex']);
+Route::get('/catalog_one/{catalog}', [Controllers\CatalogController::class, 'getOne']);

@@ -8,9 +8,9 @@ use App\Models\Catalog;
 class CatalogController extends Controller
 {
     public function getIndex($type=''){
-        $catalog_name = 'каталог фото';
+        $catalog_name = 'Каталог фотографий';
         if ($type=='video'){
-            $catalog_name = 'католог видео';
+            $catalog_name = 'Католог видео';
         }
        $catalogs = Catalog::where('type',$type)->get();
        return view('catalog',compact('catalogs','catalog_name'));

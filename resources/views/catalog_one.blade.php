@@ -8,10 +8,8 @@
                 <div class="card-header">{{ $catalog->name }}</div> 
 
                 <div class="card-body">
-                  
                 
-                <h2>{{  $catalog->name  }}</h2>
-               <div>{!!$catalog->body!!}</div>
+                <div>{{  $catalog->name  }}</div>
                   
                 </div>
             </div>

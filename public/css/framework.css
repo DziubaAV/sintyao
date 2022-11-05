@@ -272,6 +272,26 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+/* КНОПКИ */
+.custom-btn-16 {
+    background-color: #4CAF50;
+    font-size: 20px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+    
+.custom-btn-16:hover {
+    opacity: 1;
+}
+
+.card-header {
+    font-size: 20px;
+}
 
 /* Media Queries
 --------------------------------------------------------------------------------------------------------------- */

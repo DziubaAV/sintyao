@@ -71,7 +71,7 @@
 
           <!-- Logo -->
           <div id="logo" class="fl_left">
-            <h1 class="navbar-brand" href="{{ asset('/')}}">SIN TYAO</h1>
+            <h1  href="{{ asset('/')}}">SIN TYAO</h1>
           </div>
                   
         </header>
@@ -121,8 +121,8 @@
                         <textarea name="qustion" placeholder="Введите вопрос" style="height:100px"></textarea>
       
                           <div class="modal_clearfix">
-                            <button type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
-                            <button type="submit" class="modal_signupbtn">Отправить</button>
+                            <button class=".custom-btn-15" type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
+                            <button class=".custom-btn-15" type="submit" class="modal_signupbtn">Отправить</button>
                           </div>
               </div>
             </form>

@@ -16,9 +16,9 @@ class CatalogSeeder extends Seeder
      */
     public function run()
     {
-        Catalog::create(['name'=>'Mixfactor','type'=>'foto']);
+        Catalog::create(['name'=>'Mix Fight','type'=>'foto']);
         Catalog::create(['name'=>'MMA','type'=>'foto']);
-        Catalog::create(['name'=>'Live','type'=>'foto']);
+        Catalog::create(['name'=>'Club life','type'=>'foto']);
         Catalog::create(['name'=>'Trainers','type'=>'video']);
 
 
