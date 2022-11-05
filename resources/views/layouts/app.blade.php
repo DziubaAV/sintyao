@@ -120,8 +120,8 @@
                         <textarea name="qustion" placeholder="Введите вопрос" style="height:100px"></textarea>
       
                           <div class="modal_clearfix">
-                            <button class=".custom-btn-15" type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
-                            <button class=".custom-btn-15" type="submit" class="modal_signupbtn">Отправить</button>
+                            <button class="btn btn-primary" type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
+                            <button class="btn btn-primary" type="submit">Отправить</button>
                           </div>
               </div>
             </form>
@@ -131,7 +131,7 @@
         @yield('content')
       </div>
 
-      
+
   <div class="footer">
     <div class="wrapper row6">
       <div id="copyright" class="hoc clear"> 
