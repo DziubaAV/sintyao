@@ -4,11 +4,17 @@ html {
 }
 
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-size: 14px;
     line-height: 1.6em;
 }
+
+.main-content {
+    padding: 30px;
+}
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -196,7 +202,7 @@ nav ul {
 }
 
 /* Ряды */
-.row0, .row0 a {
+.row0 {
     color: #4A4A4A;
     background-color: #F2F1EE;
 }
@@ -209,6 +215,11 @@ nav ul {
 .row2 {
     color: #FFFFFF;
     background-color: #212427;
+}
+
+.row6, .row6 a {
+    color: #EAEAEA;
+    background-color: #3C4348;
 }
 
 /* Заголовок */
@@ -283,8 +294,8 @@ input[type=submit]:hover {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
-    }
-    
+}
+
 .custom-btn-16:hover {
     opacity: 1;
 }
