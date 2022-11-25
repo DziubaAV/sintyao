@@ -43,8 +43,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">Запомните меня</label>
+                                    <label class="form-check-label" for="remember">Запомнить меня</label>
                                 </div>
                             </div>
                         </div>
@@ -56,9 +55,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <span class="btn btn-link" href="{{ route('password.request') }}">
                                         Забыли свой пароль?
-                                    </a>
+                                    </span>
                                 @endif
                             </div>
                         </div>

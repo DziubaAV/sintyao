@@ -202,7 +202,7 @@ nav ul {
 }
 
 /* Ряды */
-.row0 {
+.row0, .row0 a {
     color: #4A4A4A;
     background-color: #F2F1EE;
 }

@@ -90,12 +90,12 @@
             </li>
             <li><a href="#">О нас</a>
               <ul>
-                <li><a href="#">История</a></li>
-                <li><a href="#">Тренерский состав</a></li>
+                <li><a href="{{ asset('history')}}">История</a></li>
+                <li><a href="{{ asset('treners')}}">Тренерский состав</a></li>
               </ul>
             </li>
-            <li><a href="#">Контакты</a></li>
-            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопрос/ответ</a></li>
+            <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
+            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">У Вас остались вопросы ?</a></li>
             </ul>
         </nav>
       </div>
@@ -104,20 +104,21 @@
       
       <div id="subject" class="modal_modal">
         <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
-            <form class="modal_content" method="post" action="qustion.php">
+            <form class="modal_content" method="post" action="{{asset('question')}}">
+              @csrf
               <div class="modal_container">
                   <h2>Задайте нам вопрос и мы обязательно на него ответим!</h2>
                     <p>Пожалуйста, заполните эту форму, чтобы задать нам вопрос.</p>
                     <hr>
 
                         <label>ФИО</label>
-                        <input type="Modaltext" name="name" placeholder="Введите полное имя" required>
+                        <input type="Modaltext" name="fullname" placeholder="Введите полное имя" required>
               
                         <label">Email</label>
                         <input type="Modaltext" name="email" placeholder="Введите электронную почту" required>
     
                         <label><h2>Введите Ваш вопрос:</h2></label>
-                        <textarea name="qustion" placeholder="Введите вопрос" style="height:100px"></textarea>
+                        <textarea name="body" placeholder="Введите вопрос" style="height:100px"></textarea>
       
                           <div class="modal_clearfix">
                             <button class="btn btn-primary" type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>
@@ -136,7 +137,7 @@
     <div class="wrapper row6">
       <div id="copyright" class="hoc clear"> 
         <p class="fl_left">Дипломный проект 2023 - <a href="https://iti.bsuir.by/">© ИИТ БГУИР</a></p>
-          <p class="fl_right"><a> Дзюба АВ</a></p>
+          <p class="fl_right"><a>Разработчик: Дзюба АВ</a></p>
             </div>
               </div>
   </div>

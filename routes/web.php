@@ -21,3 +21,9 @@ Auth::routes();
 Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/catalog/{type}', [Controllers\CatalogController::class, 'getIndex']);
 Route::get('/catalog_one/{catalog}', [Controllers\CatalogController::class, 'getOne']);
+Route::controller(Controllers\QuestionController::class)->prefix('question')->group(function(){
+    Route::post('/', 'postIndex');
+});
+
+
+Route::get('/{url}',[Controllers\MaintextController::class, 'getUrl']); //всегда в конце
