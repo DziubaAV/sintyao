@@ -304,6 +304,22 @@ input[type=submit]:hover {
     font-size: 20px;
 }
 
+/* Контакты */
+
+.contacts {
+    display: flex;
+    align-content: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.google-map {
+    margin-left: 99px;
+}
+
+
 /* Media Queries
 --------------------------------------------------------------------------------------------------------------- */
 @-ms-viewport {

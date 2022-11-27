@@ -27,8 +27,8 @@
       <div id="topbar" class="hoc clear"> 
         <div class="fl_left">
           <ul class="nospace inline pushright">
-            <li> <a href="tel:+375291875526">+375 (29) 187-55-26</a></li>
-              <li><a href="mailto:dz.artsiomi@gmail.com" target="_blank">dz.artsiomi@gmail.com</a></li>
+            <li> <a href="tel:+375297654924">+375 29 765-49-24</a></li>
+              <li><a href="mailto:sintyao@gmail.com" target="_blank">sintyao@gmail.com</a></li>
                 </ul>
                   </div>
 
