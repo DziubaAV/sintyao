@@ -27,8 +27,8 @@
       <div id="topbar" class="hoc clear"> 
         <div class="fl_left">
           <ul class="nospace inline pushright">
-            <li> <a href="tel:+375297654924">+375 29 765-49-24</a></li>
-              <li><a href="mailto:sintyao@gmail.com" target="_blank">sintyao@gmail.com</a></li>
+            <li> <a class='abc' href="tel:+375297654924">+375 29 765-49-24</a></li>
+              <li><a class='abc' href="mailto:sintyao@gmail.com" target="_blank">sintyao@gmail.com</a></li>
                 </ul>
                   </div>
 
@@ -36,11 +36,11 @@
                       <ul class="nospace inline pushright">
                       @guest
                       @if (Route::has('login'))
-                        <li><a href="{{ route('login') }}">Авторизация</a></li>
+                        <li><a class='abc' href="{{ route('login') }}">Авторизация</a></li>
                       @endif
 
                       @if (Route::has('register'))
-                        <li><a href="{{ route('register') }}">Регистрация</a></li>                 
+                        <li><a class='abc' href="{{ route('register') }}">Регистрация</a></li>                 
                       @endif
                       @else
 
@@ -68,16 +68,15 @@
       <div class="wrapper row1">
         <header id="header" class="hoc clear">
 
-          <!-- Logo -->
+          <!-- ЛОГО -->
           <div id="logo" class="fl_left">
-            <h1  href="{{ asset('/')}}">SIN TYAO</h1>
-          </div>
+            <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
+              </div>
                   
         </header>
       </div>
 
       <!-- НАВИГАЦИЯ -->
-
       <div class="wrapper row2">
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
@@ -101,7 +100,7 @@
       </div>
 
 
-      
+    <!-- Модальное окно "У вас остались вопросы?" -->
       <div id="subject" class="modal_modal">
         <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
             <form class="modal_content" method="post" action="{{asset('question')}}">
@@ -128,9 +127,13 @@
             </form>
       </div>
 
-      <div class="main-content"> 
-        @yield('content')
-      </div>
+      <!--Сontent -->
+     
+        <div class="main-content"> 
+          @yield('content')
+          </div>
+       
+      
 
 
   <div class="footer">
