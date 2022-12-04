@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> СК "SIN TYAO" </title>
+    <title>СК "SIN TYAO"</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,11 +18,12 @@
     <link href="{{asset('css/windows_modal.css')}}" rel="stylesheet">
    
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])    
 </head>
 
 <body>
-  <!-- Ряд 0, регистрация и авторизация -->
+  
+<!-- Ряд 0: Регистрация и авторизация -->
     <div class="wrapper row0">
       <div id="topbar" class="hoc clear"> 
         <div class="fl_left">
@@ -64,19 +65,18 @@
                         @endguest
       </div>
     </div>
+    </div>
 
+<!-- Ряд 1: LOGO -->
       <div class="wrapper row1">
         <header id="header" class="hoc clear">
-
-          <!-- ЛОГО -->
           <div id="logo" class="fl_left">
             <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
               </div>
-                  
-        </header>
-      </div>
+                </header>
+                  </div>
 
-      <!-- НАВИГАЦИЯ -->
+<!-- Ряд 2: Навигация -->
       <div class="wrapper row2">
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
@@ -101,7 +101,7 @@
       </div>
 
 
-    <!-- Модальное окно "У вас остались вопросы?" -->
+<!-- МО "Вопросы?" --> 
       <div id="subject" class="modal_modal">
         <span onclick="document.getElementById('subject').style.display='none'" class="modal_close" title="Close Modal">×</span>
             <form class="modal_content" method="post" action="{{asset('question')}}">
@@ -126,25 +126,23 @@
                           </div>
               </div>
             </form>
+                            </div>
+
+<!-- Контент -->  
+  <div class="main-content"> 
+    @yield('content')
       </div>
 
-      <!--Сontent -->
-     
-        <div class="main-content"> 
-          @yield('content')
+<!-- Ряд 6: Подвал -->
+  <div class="footer"><div class="wrapper row6">
+    <div id="copyright" class="hoc clear"> 
+      <p class="fl_left">Дипломный проект 2023 - <a href="https://iti.bsuir.by/">© ИИТ БГУИР</a></p>
+        <p class="fl_right"><a>Разработчик: Дзюба АВ</a></p>
           </div>
-       
-      
-
-
-  <div class="footer">
-    <div class="wrapper row6">
-      <div id="copyright" class="hoc clear"> 
-        <p class="fl_left">Дипломный проект 2023 - <a href="https://iti.bsuir.by/">© ИИТ БГУИР</a></p>
-          <p class="fl_right"><a>Разработчик: Дзюба АВ</a></p>
             </div>
               </div>
-  </div>
+
+
 
 </body>
 </html>
