@@ -3,18 +3,36 @@ html {
     overflow-x: hidden;
 }
 
-html, body {
-    height: 100%;
+
+* {
     margin: 0;
     padding: 0;
-    font-size: 14px;
-    line-height: 1.6em;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.body-content {
+    flex: 1 0 auto;
+    background-image: url(../images/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main-content {
     padding: 30px;
 }
 
+.footer {
+    flex: 0 0 auto;
+}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -82,15 +100,6 @@ h1, h2, h3, h4, h5, h6, .heading {
 .hoc {
     display: block;
     margin: 0 auto;
-}
-
-.wrapper {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    word-wrap: break-word;
 }
 
 /* Top Bar

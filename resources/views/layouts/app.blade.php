@@ -20,11 +20,11 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])    
 </head>
-
 <body>
   
+<div class='wrapper'>
 <!-- Ряд 0: Регистрация и авторизация -->
-    <div class="wrapper row0">
+    <div class="row0">
       <div id="topbar" class="hoc clear"> 
         <div class="fl_left">
           <ul class="nospace inline pushright">
@@ -68,7 +68,7 @@
     </div>
 
 <!-- Ряд 1: LOGO -->
-      <div class="wrapper row1">
+      <div class="row1">
         <header id="header" class="hoc clear">
           <div id="logo" class="fl_left">
             <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
@@ -77,7 +77,7 @@
                   </div>
 
 <!-- Ряд 2: Навигация -->
-      <div class="wrapper row2">
+      <div class="row2">
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
             <li class="active"><a href="{{ asset('/')}}">Главная</a></li>
@@ -128,13 +128,15 @@
             </form>
                             </div>
 
-<!-- Контент -->  
-  <div class="main-content"> 
-    @yield('content')
-      </div>
-
+<!-- Ряд 3: Контент --> 
+  <div class='body-content row3'>
+    <div class="main-content"> 
+      @yield('content')
+        </div>
+          </div> 
+  
 <!-- Ряд 6: Подвал -->
-  <div class="footer"><div class="wrapper row6">
+  <div class="footer"><div class="row6">
     <div id="copyright" class="hoc clear"> 
       <p class="fl_left">Дипломный проект 2023 - <a href="https://iti.bsuir.by/">© ИИТ БГУИР</a></p>
         <p class="fl_right"><a>Разработчик: Дзюба АВ</a></p>
@@ -142,7 +144,7 @@
             </div>
               </div>
 
-
+</div>
 
 </body>
 </html>
