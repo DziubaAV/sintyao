@@ -20,8 +20,8 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])    
 </head>
+
 <body>
-  
 <div class='wrapper'>
 <!-- Ряд 0: Регистрация и авторизация -->
     <div class="row0">
@@ -63,9 +63,9 @@
                                 </div>
                             </li>
                         @endguest
-      </div>
-    </div>
-    </div>
+                                        </div>
+                                          </div>
+                                            </div>
 
 <!-- Ряд 1: LOGO -->
       <div class="row1">
@@ -98,7 +98,7 @@
             <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
             </ul>
         </nav>
-      </div>
+              </div>
 
 
 <!-- МО "Вопросы?" --> 
@@ -144,7 +144,7 @@
             </div>
               </div>
 
-</div>
 
+</div>
 </body>
 </html>
