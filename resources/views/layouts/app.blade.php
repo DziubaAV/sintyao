@@ -94,7 +94,8 @@
               </ul>
             </li>
             <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
-            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">У Вас остались вопросы ?</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
             </ul>
         </nav>
       </div>
