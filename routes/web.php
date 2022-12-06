@@ -24,6 +24,7 @@ Route::get('/catalog_one/{catalog}', [Controllers\CatalogController::class, 'get
 Route::controller(Controllers\QuestionController::class)->prefix('question')->group(function(){
 Route::post('/', 'postIndex');
 });
-
+Route::get('/review',[Controllers\ReviewController::class, 'getIndex']);
+Route::post('/review',[Controllers\ReviewController::class, 'postIndex']);
 
 Route::get('/{url}',[Controllers\MaintextController::class, 'getUrl']); //всегда в конце
