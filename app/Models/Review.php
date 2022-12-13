@@ -11,6 +11,6 @@ class Review extends Model
     protected $fillable=['user_id', 'body', 'stars', 'status'];
     
     public function users() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "user_id");
     }
 }

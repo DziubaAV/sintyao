@@ -90,7 +90,7 @@
             <li><a href="#">О нас</a>
               <ul>
                 <li><a href="{{ asset('history')}}">История</a></li>
-                <li><a href="{{ asset('treners')}}">Тренерский состав</a></li>
+                <li><a href="{{ asset('trener')}}">Тренерский состав</a></li>
               </ul>
             </li>
             <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>

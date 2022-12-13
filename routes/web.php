@@ -26,5 +26,6 @@ Route::post('/', 'postIndex');
 });
 Route::get('/review',[Controllers\ReviewController::class, 'getIndex']);
 Route::post('/review',[Controllers\ReviewController::class, 'postIndex']);
+Route::get('/trener',[Controllers\TrenerController::class, 'getPage']);
 
 Route::get('/{url}',[Controllers\MaintextController::class, 'getUrl']); //всегда в конце
