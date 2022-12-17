@@ -14,25 +14,26 @@
                                     <img src="..\images\Gorodilov_IB.jpg" alt="Городилов Игорь Борисович" style="width:90%">
                                     <h3>Директор</h3>
                                     <!-- <p class="trener-title">CEO & Founder, Example</p> -->
-                                    <!-- <p>Harvard University</p> -->
+                                    <p>Тренер-преподаватель высшей категории</p>
                                         <div style="margin: 24px 0;">
                                             <!-- <a href="#"><i class="fa fa-dribbble"></i></a> -->
                                             <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
                                             <!-- <a href="#"><i class="fa fa-linkedin"></i></a>   -->
-                                            <a href="https://www.facebook.com/profile.php?id=100023557853404" target="_blank"><i class="fa fa-facebook"></i></a> 
+                                            <!-- <a href="https://www.facebook.com/profile.php?id=100023557853404" target="_blank"><i class="fa fa-facebook"></i></a> -->
                                         </div>
-                                    <p><button>Позвонить</button></p>
+                                    <!-- <p><button class="btn btn-primary">Позвонить</button></p> -->
                                 </div>
                                 </div>
                                 
                 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                                 <div class='trener-table'>
-                                <!-- <h2 style="text-align:center">Директор</h2> -->
+                                <h2 style="text-align:center">Злыгостев Александр Вячеславович</h2>
                                 <div class="trener-card">
-                                    <img src="#" alt="#" style="width:100%">
-                                    <h2>Старший тренер</h2>
+                                    <img src="..\images\V01MWYRryHY.jpg" alt="Злыгостев Александр Вячеславович" style="width:90%">
+                                    <h4>МСМК по тайскому боксу</h4>
                                     <!-- <p class="trener-title">CEO & Founder, Example</p> -->
-                                    <!-- <p>Harvard University</p> -->
+                                    
+                                    <p>Тренер-преподаватель</p>
                                         <div style="margin: 24px 0;">
                                             <!-- <a href="#"><i class="fa fa-dribbble"></i></a> -->
                                             <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
@@ -43,22 +44,9 @@
                                 </div>
                                 </div>
                 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                                <div class='trener-table'>
-                                <!-- <h2 style="text-align:center">Директор</h2> -->
-                                <div class="trener-card">
-                                    <img src="#" alt="#" style="width:100%">
-                                    <h2>Старший тренер</h2>
-                                    <!-- <p class="trener-title">CEO & Founder, Example</p> -->
-                                    <!-- <p>Harvard University</p> -->
-                                        <div style="margin: 24px 0;">
-                                            <!-- <a href="#"><i class="fa fa-dribbble"></i></a> -->
-                                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-                                            <!-- <a href="#"><i class="fa fa-linkedin"></i></a>   -->
-                                            <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
-                                        </div>
-                                    <!-- <p><button>Contact</button></p> -->
-                                </div>
-                                </div>
+                             
+
+
                 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                 </div>
             </div>

@@ -22,16 +22,33 @@
                         @guest()
 
                         <div class="alert alert-danger" role="alert">
-                        Зарегистрируйтесь, чтобы оставить свой отзыв, спасибо!
+                        Авторизуйтесь, чтобы добавить комментарий.
                         </div>
                         
                         @else
                         <form action="{{ asset('review') }}" method="POST">
                         @csrf  
                         <div class="mb-3">
+
+                        <div class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5">
+                            <label for="star-5" title="Оценка '5'"></label>	
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="Оценка '4'"></label>    
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="Оценка '3'"></label>  
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="Оценка '2'"></label>    
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="Оценка '1'"></label>
+                        </div>
+
                             <label for="exampleFormControlTextarea1" class="form-label">Текст отзыва</label>
                             <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
+<!-- Расчет рейтига -->
+                        
+
                         <button class="btn btn-primary" type="submit">Отправить</button>
                         </form>
                         @endguest
