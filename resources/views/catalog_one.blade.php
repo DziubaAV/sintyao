@@ -10,10 +10,14 @@
                 <div class="card-body">
                 @if(isset($media_arr[0]))
                 @foreach ($media_arr as $key=>$value)
-                <img src="{{ $value }}" alt="" class=''>
+
+                <a target="_blank" href="{{ $value }}">
+                    <img src="{{ $value }}" alt="#" style="width:30%">
+                        </a>
+
                 @endforeach
                 @endif
-                <div>{{  $catalog->body  }}</div>
+                <div>{{ $catalog->body }}</div>
                   
                 </div>
             </div>
