@@ -11,6 +11,7 @@
     <title>СК "SIN TYAO"</title>
 
     <!-- Fonts -->
+    <link rel="shortcut icon" href="..\images\SinTyaoBuda.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -71,6 +72,9 @@
 <!-- Ряд 1: LOGO -->
       <div class="row1">
         <header id="header" class="hoc clear">
+          <!-- <div class="fl_left">
+          <img src="..\images\SinTyaoBuda.jpg" alt="" class="round">
+          </div> -->
           <div id="logo" class="fl_left">
             <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
               </div>

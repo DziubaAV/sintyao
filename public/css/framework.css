@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6, .heading {
 /* Заголовк */
 
 #header {
-    padding: 30px 0;
+    padding: 15px 0;
 }
 
 #header #logo {
@@ -130,6 +130,13 @@ h1, h2, h3, h4, h5, h6, .heading {
     padding: 0;
     font-size: 26px;
 }
+
+/* .round {
+    width: 70px;
+    height: 70px;
+    
+} */
+
 
 /* Затухание перехода */
 

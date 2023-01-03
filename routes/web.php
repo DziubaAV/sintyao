@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/catalog/{type}', [Controllers\CatalogController::class, 'getIndex']);
 Route::get('/catalog_one/{catalog}', [Controllers\CatalogController::class, 'getOne']);
+Route::post('/catalog/{catalog}/add_picture', [Controllers\CatalogController::class, 'addPicture']);
 Route::controller(Controllers\QuestionController::class)->prefix('question')->group(function(){
 Route::post('/', 'postIndex');
 });

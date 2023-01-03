@@ -17,7 +17,16 @@ class CatalogController extends Controller
     }
 
     public function getOne(Catalog $catalog=null){
-        return view ('catalog_one',compact('catalog'));
+        $media_arr=[];
+        foreach($catalog->getMedia('catalog') as $media) {
+            $media_arr[]=asset('storage/'.$media['id'].'/'.$media['file_name']);
+        }
+
+        return view ('catalog_one',compact('catalog','media_arr'));
+    }
+
+    public function addPicture(Catalog $catalog, Request $request) {
+        $catalog->addMedia($request->file('picture'))->toMediaCollection('catalog');
+        return response()->json(['catalog' => $catalog->id]);
     }
 }
-

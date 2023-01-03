@@ -8,8 +8,12 @@
                 <div class="card-header">{{ $catalog->name }}</div> 
 
                 <div class="card-body">
-                
-                <div>{{  $catalog->name  }}</div>
+                @if(isset($media_arr[0]))
+                @foreach ($media_arr as $key=>$value)
+                <img src="{{ $value }}" alt="" class=''>
+                @endforeach
+                @endif
+                <div>{{  $catalog->body  }}</div>
                   
                 </div>
             </div>
