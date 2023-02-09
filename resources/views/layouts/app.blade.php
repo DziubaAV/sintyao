@@ -108,7 +108,7 @@
             <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
             
             @if (Auth::user()->is_admin)
-            <li class='admin'><a href="{{ asset('adminka') }}">Административная панель</a></li>
+            <li class='fl_right'><a href="{{ asset('adminka') }}">Административная панель</a></li>
             @endif
 
             </ul>
@@ -133,7 +133,7 @@
                         <input type="Modaltext" name="email" placeholder="Введите электронную почту" required>
     
                         <label><h2>Введите Ваш вопрос:</h2></label>
-                        <textarea name="body" placeholder="Введите вопрос" style="height:100px"></textarea>
+                        <textarea name="body" placeholder="Введите вопрос" style="height:100px" required></textarea>
       
                           <div class="modal_clearfix">
                             <button class="btn btn-primary" type="button" onclick="document.getElementById('subject').style.display='none'" class="modal_cancelbtn">Отмена</button>

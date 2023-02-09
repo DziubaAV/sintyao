@@ -42,30 +42,39 @@
                 
                     <div class="tab">
                       <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
-                      <button class="tablinks" onclick="openLayout(event, 'Media')"> Фотогалерея</button>
-                      <button class="tablinks" onclick="openLayout(event, 'Media')"> Видеогалерея</button>
+                      <button class="tablinks" onclick="openLayout(event, 'Foto')"> Фотогалерея</button>
+                      <button class="tablinks" onclick="openLayout(event, 'Video')"> Видеогалерея</button>
                       <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
                       <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
                     </div>
+
+                          <div id="Reviews" class="tabcontent">
+                           
+                            @foreach($reviews as $review)
+                            {{$review->body}}
+
+                            <div class="fl_right">
+                            <button class="btn btn-primary" id="edit" type="button">Изменить</button>
+                            <button class="btn btn-primary" id="del"  type="button">Удалить</button>
+                            </div>
+                            
+                            <hr />  
+                            @endforeach
+                          </div>
         
-                          <div id="Media" class="tabcontent">
-                            <h3>Фото/Видео</h3>
+                          <div id="Foto" class="tabcontent">
+                            <h3>Фотогалерея</h3>
                             <p>Редактирование фото и видеоматериалов.</p>
                           </div>
-                          
+
+                          <div id="Video" class="tabcontent">
+                            <h3>Видеогалерея</h3>
+                            <p>Редактирование фото и видеоматериалов.</p>
+                          </div>
+
                           <div id="History" class="tabcontent">
                             <h3>Истории</h3>
                             <p>Редактирование историй.</p> 
-                          </div>
-                          
-                          <div id="Reviews" class="tabcontent">
-                            <h3>Отзывы</h3>
-
-                            @foreach($reviews as $review)
-                            {{$review->body}}
-                            <hr />    
-                            @endforeach
-
                           </div>
 
                           <div id="Coaching_staff" class="tabcontent">
