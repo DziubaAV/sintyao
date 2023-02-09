@@ -18,9 +18,12 @@
     <link href="{{asset('css/framework.css')}}" rel="stylesheet">
     <link href="{{asset('css/layout.css')}}" rel="stylesheet">
     <link href="{{asset('css/windows_modal.css')}}" rel="stylesheet">
-   
+    
+
+    @stack('styles') 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])    
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+      
 </head>
 
 <body>
@@ -40,15 +43,16 @@
                       @guest
                       @if (Route::has('login'))
                         <li><a class='abc' href="{{ route('login') }}">Авторизация</a></li>
+                      
                       @endif
-
                       @if (Route::has('register'))
                         <li><a class='abc' href="{{ route('register') }}">Регистрация</a></li>                 
                       @endif
+
                       @else
 
                             <!-- Выход из учетных данных -->
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown ">
                               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
                                     {{ Auth::user()->name }}
                                 
@@ -64,6 +68,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
                                         </div>
                                           </div>
@@ -101,6 +106,11 @@
             <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
             <li><a href=" {{ asset('review') }}">Отзывы</a></li>
             <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
+            
+            @if (Auth::user()->is_admin)
+            <li class='admin'><a href="{{ asset('adminka') }}">Административная панель</a></li>
+            @endif
+
             </ul>
         </nav>
               </div>
@@ -152,4 +162,5 @@
 
 </div>
 </body>
+@stack('scripts')  
 </html>
