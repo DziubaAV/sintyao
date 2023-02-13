@@ -110,7 +110,7 @@
             @if (Auth::user()->is_admin)
             <li class='fl_right'><a href="{{ asset('adminka') }}">Административная панель</a></li>
             @endif
-
+ 
             </ul>
         </nav>
               </div>

@@ -40,10 +40,10 @@
 
 
                 
-                    <div class="tab">
-                      <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
+                    <div class="tab">                      
                       <button class="tablinks" onclick="openLayout(event, 'Foto')"> Фотогалерея</button>
                       <button class="tablinks" onclick="openLayout(event, 'Video')"> Видеогалерея</button>
+                      <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
                       <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
                       <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
                     </div>

@@ -58,7 +58,7 @@
                             <textarea placeholder="Текст отзыва..." name="body" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Отправить</button>
+                        <button class="btn btn-primary fl_right" type="submit">Отправить</button>
                         </form>
                         @endguest
                     </div>
