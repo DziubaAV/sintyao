@@ -29,5 +29,11 @@ Route::get('/review',[Controllers\ReviewController::class, 'getIndex']);
 Route::post('/review',[Controllers\ReviewController::class, 'postIndex']);
 Route::get('/trener',[Controllers\TrenerController::class, 'getPage']);
 Route::get('/adminka',[Controllers\Admin\ReviewController::class, 'getIndex']);
+Route::get('/adminka/review/{id}/edit',[Controllers\Admin\ReviewController::class, 'getEdit']);
+Route::post('/adminka/review/{id}',[Controllers\Admin\ReviewController::class, 'postUpdate']);
+Route::get('/adminka/review/{id}/delete',[Controllers\Admin\ReviewController::class, 'destroy']);
+
+
+
 
 Route::get('/{url}',[Controllers\MaintextController::class, 'getUrl']); //всегда в конце

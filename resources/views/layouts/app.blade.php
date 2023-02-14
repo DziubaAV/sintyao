@@ -18,6 +18,10 @@
     <link href="{{asset('css/framework.css')}}" rel="stylesheet">
     <link href="{{asset('css/layout.css')}}" rel="stylesheet">
     <link href="{{asset('css/windows_modal.css')}}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
     
 
     @stack('styles') 
@@ -77,14 +81,15 @@
 <!-- Ряд 1: LOGO -->
       <div class="row1">
         <header id="header" class="hoc clear">
-          <!-- <div class="fl_left">
-          <img src="..\images\SinTyaoBuda.jpg" alt="" class="round">
-          </div> -->
-          <div id="logo" class="fl_left">
-            <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
-              </div>
-                </header>
-                  </div>
+          <div class="fl_left">
+            <a target="_blank" href="..\images\SinTyaoBuda.jpg">
+              <img class="round" src="..\images\SinTyaoBuda.jpg" alt="SinTyaoBuda"></a>
+                </div>
+                  <div id="logo" class="fl_left">
+                    <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
+                    </div>
+        </header>
+      </div>
 
 <!-- Ряд 2: Навигация -->
       <div class="row2">
@@ -107,10 +112,12 @@
             <li><a href=" {{ asset('review') }}">Отзывы</a></li>
             <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
             
+            @if(Auth::user())
             @if (Auth::user()->is_admin)
             <li class='fl_right'><a href="{{ asset('adminka') }}">Административная панель</a></li>
             @endif
- 
+            @endif
+
             </ul>
         </nav>
               </div>

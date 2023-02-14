@@ -14,9 +14,9 @@
         }
         document.getElementById(Layout).style.display = "block";
         evt.currentTarget.className += " active";
-    }
+        }
         document.getElementById("defaultOpen").click();
-    </script>
+</script>
 @endpush
 
 @push('styles')
@@ -25,10 +25,6 @@
 
 @section('content')
 <p>Добро пожаловать в административную панель:</p>
-
-    
-
-
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -36,9 +32,6 @@
                 <div class="card-header">Административная панель</div>
 
                 <div class='admin_body'>
-
-
-
                 
                     <div class="tab">                      
                       <button class="tablinks" onclick="openLayout(event, 'Foto')"> Фотогалерея</button>
@@ -54,8 +47,8 @@
                             {{$review->body}}
 
                             <div class="fl_right">
-                            <button class="btn btn-primary" id="edit" type="button">Изменить</button>
-                            <button class="btn btn-primary" id="del"  type="button">Удалить</button>
+                            <a href="{{ asset('/adminka/review/'.$review->id.'/edit') }}" class="btn btn-primary" id="edit" type="button">Изменить</a>
+                            <a href="{{ asset('/adminka/review/'.$review->id.'/delete') }}" class="btn btn-primary" id="del"  type="button">Удалить</a>
                             </div>
                             
                             <hr />  

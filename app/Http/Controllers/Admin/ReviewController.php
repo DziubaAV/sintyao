@@ -16,7 +16,25 @@ class ReviewController extends Controller
 
     public function postIndex(Request $request) {
         $request['user_id']=(Auth::guest())?0:Auth::user()->id;
-Review::create($request->all());
-return redirect()->back();
+        Review::create($request->all());
+        return redirect()->back();
     }
+
+    public function getEdit($id) {
+        $review=Review::find($id);
+        return view('admin.review_edit', compact('review'));
+    }
+
+    public function postUpdate(Request $request, $id) {
+        $review=Review::find($id);
+        $review->update($request->all());
+        return redirect('adminka');
+    }
+
+    public function destroy($id) {
+        $review=Review::find($id);
+        $review->delete();
+        return redirect()->back();
+    }
+
 }
