@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use Auth;
+use App\Models\Catalog;
+
 
 class ReviewController extends Controller
 {
     public function getIndex() {
+        $catalogs=Catalog::all();
         $reviews=Review::whereNull('status')->orderBy('id', 'DESC')->simplePaginate(5);
-        return view('admin.review', compact('reviews'));
+        return view('admin.review', compact('reviews','catalogs'));
     }
 
     public function postIndex(Request $request) {
@@ -36,5 +39,6 @@ class ReviewController extends Controller
         $review->delete();
         return redirect()->back();
     }
+
 
 }

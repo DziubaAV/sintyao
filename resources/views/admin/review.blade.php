@@ -39,40 +39,70 @@
                       <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
                       <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
                       <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
+                      <button class="tablinks" onclick="openLayout(event, 'News')"> Новости</button>
+
                     </div>
 
                           <div id="Reviews" class="tabcontent">
-                           
                             @foreach($reviews as $review)
                             {{$review->body}}
-
                             <div class="fl_right">
-                            <a href="{{ asset('/adminka/review/'.$review->id.'/edit') }}" class="btn btn-primary" id="edit" type="button">Изменить</a>
-                            <a href="{{ asset('/adminka/review/'.$review->id.'/delete') }}" class="btn btn-primary" id="del"  type="button">Удалить</a>
+                              <a href="{{ asset('/adminka/review/'.$review->id.'/edit') }}" class="btn btn-primary" id="edit" type="button">Изменить</a>
+                              <a href="{{ asset('/adminka/review/'.$review->id.'/delete') }}" class="btn btn-primary" id="del"  type="button">Удалить</a>
                             </div>
-                            
                             <hr />  
                             @endforeach
                           </div>
         
                           <div id="Foto" class="tabcontent">
-                            <h3>Фотогалерея</h3>
-                            <p>Редактирование фото и видеоматериалов.</p>
+                          <h3>Каталог фотогалереи</h3>
+                          
+                          @foreach($catalogs as $catalog)
+                          <div class="line">
+                          {{$catalog->name}}
+                          <div class="fl_right">
+                        <a href="{{ asset('/adminka/catalog/'.$catalog->id) }}">Перейти в галерею </a>
+                          </div>
+                          </div>
+                          
+
+                          @endforeach
+                                 
+                            <div class="fl_right">
+                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
+                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
+                            </div>
                           </div>
 
                           <div id="Video" class="tabcontent">
-                            <h3>Видеогалерея</h3>
-                            <p>Редактирование фото и видеоматериалов.</p>
+                          <h3>Видеогалерея</h3>
+                              <p>Редактирвание раздела.</p>    
+                            <div class="fl_right">  
+                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
+                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
+                            </div>
                           </div>
 
                           <div id="History" class="tabcontent">
-                            <h3>Истории</h3>
-                            <p>Редактирование историй.</p> 
+                          <h3>История</h3>
+                              <p>Редактирвание раздела.</p>   
+                            <div class="fl_right">
+                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
+                            </div>
                           </div>
 
                           <div id="Coaching_staff" class="tabcontent">
                               <h3>Тренерский состав</h3>
-                              <p>Редактирвание тренерского состава.</p>
+                              <p>Редактирвание раздела.</p>   
+                          </div>
+
+                          <div id="News" class="tabcontent">
+                              <h3>Новости</h3>
+                              <p>Редактирвание раздела.</p> 
+                              <div class="fl_right">  
+                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
+                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
+                            </div>                            
                           </div>
 
                     </div>

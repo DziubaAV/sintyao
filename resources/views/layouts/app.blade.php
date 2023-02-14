@@ -82,8 +82,8 @@
       <div class="row1">
         <header id="header" class="hoc clear">
           <div class="fl_left">
-            <a target="_blank" href="..\images\SinTyaoBuda.jpg">
-              <img class="round" src="..\images\SinTyaoBuda.jpg" alt="SinTyaoBuda"></a>
+            <a target="_blank" href="{{ asset('/images/SinTyaoBuda.jpg') }}">
+              <img class="round" src="{{ asset('/images/SinTyaoBuda.jpg') }}" alt="SinTyaoBuda"></a>
                 </div>
                   <div id="logo" class="fl_left">
                     <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>

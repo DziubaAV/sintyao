@@ -19,20 +19,25 @@ Route::get("/",[Controllers\BaseController::class,"getIndex"]);
 Auth::routes();
 
 Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/catalog/{type}', [Controllers\CatalogController::class, 'getIndex']);
 Route::get('/catalog_one/{catalog}', [Controllers\CatalogController::class, 'getOne']);
 Route::post('/catalog/{catalog}/add_picture', [Controllers\CatalogController::class, 'addPicture']);
 Route::controller(Controllers\QuestionController::class)->prefix('question')->group(function(){
 Route::post('/', 'postIndex');
 });
+
 Route::get('/review',[Controllers\ReviewController::class, 'getIndex']);
 Route::post('/review',[Controllers\ReviewController::class, 'postIndex']);
 Route::get('/trener',[Controllers\TrenerController::class, 'getPage']);
+
 Route::get('/adminka',[Controllers\Admin\ReviewController::class, 'getIndex']);
 Route::get('/adminka/review/{id}/edit',[Controllers\Admin\ReviewController::class, 'getEdit']);
 Route::post('/adminka/review/{id}',[Controllers\Admin\ReviewController::class, 'postUpdate']);
 Route::get('/adminka/review/{id}/delete',[Controllers\Admin\ReviewController::class, 'destroy']);
-
+Route::get('/adminka/catalog/{id}',[Controllers\Admin\CatalogController::class, 'getCatalog']);
+Route::post('adminka/catalog/{catalog}/add_picture', [Controllers\Admin\CatalogController::class, 'addPicture']);
+Route::get('/adminka/delete_picture/{id}',[Controllers\Admin\CatalogController::class, 'destroyPicture']);
 
 
 
