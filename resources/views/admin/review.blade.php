@@ -25,90 +25,66 @@
 
 @section('content')
 <p>Добро пожаловать в административную панель:</p>
-  <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Административная панель</div>
-
-                <div class='admin_body'>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Административная панель</div>
+          <div class='admin_body'>
                 
                     <div class="tab">                      
-                      <button class="tablinks" onclick="openLayout(event, 'Foto')"> Фотогалерея</button>
-                      <button class="tablinks" onclick="openLayout(event, 'Video')"> Видеогалерея</button>
+                      <button class="tablinks" onclick="openLayout(event, 'Gallery')"> Фото и видеогалерея</button>
                       <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
                       <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
                       <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
                       <button class="tablinks" onclick="openLayout(event, 'News')"> Новости</button>
-
                     </div>
 
+                          <!-- Фото и видеогалерея -->
+                          <div id="Gallery" class="tabcontent">
+                          @foreach($catalogs as $catalog)
+                            <span style="font-size: 15px">{{$catalog->name}}</span>
+                              <div class="fl_right">
+                              <a href="{{ asset('/adminka/catalog/'.$catalog->id) }}" class="btn btn-primary" id="edit" type="button">Перейти</a>
+                              </div>                                                       
+<hr /> 
+                          @endforeach      
+                          </div>
+
+                          <!-- Отзывы -->
                           <div id="Reviews" class="tabcontent">
-                            @foreach($reviews as $review)
-                            {{$review->body}}
-                            <div class="fl_right">
-                              <a href="{{ asset('/adminka/review/'.$review->id.'/edit') }}" class="btn btn-primary" id="edit" type="button">Изменить</a>
-                              <a href="{{ asset('/adminka/review/'.$review->id.'/delete') }}" class="btn btn-primary" id="del"  type="button">Удалить</a>
-                            </div>
-                            <hr />  
+                          @foreach($reviews as $review)
+                            <span style="font-size: 15px"><b>{{ $review->users->name }}:</b> {{$review->body}}</span>
+                              <div class="fl_right">
+                                <a href="{{ asset('/adminka/review/'.$review->id.'/edit') }}" class="btn btn-primary" id="edit" type="button">Изменить</a>
+                                <a href="{{ asset('/adminka/review/'.$review->id.'/delete') }}" class="btn btn-primary" id="del"  type="button">Удалить</a>
+                              </div>  
+<hr />  
                             @endforeach
                           </div>
-        
-                          <div id="Foto" class="tabcontent">
-                          <h3>Каталог фотогалереи</h3>
-                          
-                          @foreach($catalogs as $catalog)
-                          <div class="line">
-                          {{$catalog->name}}
-                          <div class="fl_right">
-                        <a href="{{ asset('/adminka/catalog/'.$catalog->id) }}">Перейти в галерею </a>
-                          </div>
-                          </div>
-                          
 
-                          @endforeach
-                                 
-                            <div class="fl_right">
-                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
-                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
-                            </div>
-                          </div>
-
-                          <div id="Video" class="tabcontent">
-                          <h3>Видеогалерея</h3>
-                              <p>Редактирвание раздела.</p>    
-                            <div class="fl_right">  
-                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
-                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
-                            </div>
-                          </div>
-
+                          <!-- Истории -->
                           <div id="History" class="tabcontent">
-                          <h3>История</h3>
-                              <p>Редактирвание раздела.</p>   
-                            <div class="fl_right">
-                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
-                            </div>
+                            <h3>История</h3>
+                            <p>Редактирвание раздела.</p>    
                           </div>
 
+                          <!-- Тренерский состав  -->
                           <div id="Coaching_staff" class="tabcontent">
                               <h3>Тренерский состав</h3>
                               <p>Редактирвание раздела.</p>   
                           </div>
-
+                          
+                          <!-- Новости -->
                           <div id="News" class="tabcontent">
-                              <h3>Новости</h3>
-                              <p>Редактирвание раздела.</p> 
-                              <div class="fl_right">  
-                              <a href="#" class="btn btn-primary" id="edit"      type="button">Изменить</a>
-                              <a href="#" class="btn btn-primary" id="download"  type="button">Добавить</a>
-                            </div>                            
+                            <h3>Новости</h3>
+                            <p>Редактирвание раздела.</p> 
                           </div>
 
-                    </div>
-                </div>
-            </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
         </div>
+      </div>
     </div>
+  </div>
 </div>
 @endsection
