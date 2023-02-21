@@ -31,13 +31,18 @@ Route::get('/review',[Controllers\ReviewController::class, 'getIndex']);
 Route::post('/review',[Controllers\ReviewController::class, 'postIndex']);
 Route::get('/trener',[Controllers\TrenerController::class, 'getPage']);
 
-Route::get('/adminka',[Controllers\Admin\ReviewController::class, 'getIndex']);
-Route::get('/adminka/review/{id}/edit',[Controllers\Admin\ReviewController::class, 'getEdit']);
-Route::post('/adminka/review/{id}',[Controllers\Admin\ReviewController::class, 'postUpdate']);
-Route::get('/adminka/review/{id}/delete',[Controllers\Admin\ReviewController::class, 'destroy']);
-Route::get('/adminka/catalog/{id}',[Controllers\Admin\CatalogController::class, 'getCatalog']);
-Route::post('adminka/catalog/{catalog}/add_picture', [Controllers\Admin\CatalogController::class, 'addPicture']);
-Route::get('/adminka/delete_picture/{id}',[Controllers\Admin\CatalogController::class, 'destroyPicture']);
+Route::prefix('adminka')->group(function(){
+    Route::get('/',[Controllers\Admin\ReviewController::class, 'getIndex']);
+    Route::get('/review/{id}/edit',[Controllers\Admin\ReviewController::class, 'getEdit']);
+    Route::post('/review/{id}',[Controllers\Admin\ReviewController::class, 'postUpdate']);
+    Route::get('/review/{id}/delete',[Controllers\Admin\ReviewController::class, 'destroy']);
+    Route::get('/catalog/{id}',[Controllers\Admin\CatalogController::class, 'getCatalog']);
+    Route::post('/catalog/',[Controllers\Admin\CatalogController::class, 'postIndex']);
+    Route::post('/catalog/{catalog}/add_picture', [Controllers\Admin\CatalogController::class, 'addPicture']);
+    Route::get('/delete_picture/{id}',[Controllers\Admin\CatalogController::class, 'destroyPicture']);
+});
+
+
 
 
 

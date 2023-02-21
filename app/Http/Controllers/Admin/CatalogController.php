@@ -20,7 +20,9 @@ return view ('admin.catalog_one', compact('catalog','media_arr'));
     }
 
     public function addPicture(Catalog $catalog, Request $request) {
-        $catalog->addMedia($request->file('picture'))->toMediaCollection('catalog');
+        if($request->has('picture')){
+            $catalog->addMedia($request->file('picture'))->toMediaCollection('catalog');
+        }
         return redirect()->back();
     }
 
@@ -28,5 +30,11 @@ return view ('admin.catalog_one', compact('catalog','media_arr'));
 $media=Media::find($id);
 $media->delete();
 return redirect()->back();
+    }
+
+    public function postIndex(Request $request) {
+        Catalog::create($request->all());
+        return redirect()->back();
+
     }
 }

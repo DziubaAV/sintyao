@@ -33,7 +33,7 @@
           <div class='admin_body'>
                 
                     <div class="tab">                      
-                      <button class="tablinks" onclick="openLayout(event, 'Gallery')"> Фото и видеогалерея</button>
+                      <button class="tablinks" onclick="openLayout(event, 'Gallery')"> Каталог</button>
                       <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
                       <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
                       <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
@@ -42,6 +42,17 @@
 
                           <!-- Фото и видеогалерея -->
                           <div id="Gallery" class="tabcontent">
+                            <form action="{{ asset('/adminka/catalog') }}" method="POST">
+                              @csrf
+                              <input type="text" name="name" class="">
+<select name="type" id="type">
+  <option value="foto">Фото</option>
+<option value="video">Видео</option>
+</select>
+                              <input type="submit" value="Добавить">
+                            </form>
+                            
+                            <hr>
                           @foreach($catalogs as $catalog)
                             <span style="font-size: 15px">{{$catalog->name}}</span>
                               <div class="fl_right">

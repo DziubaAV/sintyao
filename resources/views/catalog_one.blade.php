@@ -12,7 +12,7 @@
                 @foreach ($media_arr as $key=>$value)
 
                 <a target="_blank" href="{{ $value }}">
-                    <img class="catalog-img" src="{{ $value }}" alt="#" width="150px" height="200px">
+                    <img class="catalog-img" src="{{ $value }}" width="150px" height="200px">
                         </a>
 
                 @endforeach

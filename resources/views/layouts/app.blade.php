@@ -38,27 +38,26 @@
         <div class="fl_left">
           <ul class="nospace inline pushright">
             <li> <a class='abc' href="tel:+375297654924">+375 29 765-49-24</a></li>
-              <li><a class='abc' href="mailto:sintyao@gmail.com" target="_blank">sintyao@gmail.com</a></li>
+              <li><a class='abc' href="mailto:zebra-gor@yandex.by" target="_blank">zebra-gor@yandex.by</a></li>
                 </ul>
-                  </div>
+        </div>
 
                     <div class="fl_right">
                       <ul class="nospace inline pushright">
-                      @guest
-                      @if (Route::has('login'))
-                        <li><a class='abc' href="{{ route('login') }}">Авторизация</a></li>
-                      
-                      @endif
-                      @if (Route::has('register'))
-                        <li><a class='abc' href="{{ route('register') }}">Регистрация</a></li>                 
-                      @endif
+                        @guest
+                        @if (Route::has('login'))
+                          <li><a class='abc' href="{{ route('login') }}">Авторизация</a></li>
+  
+                        @endif
+                        @if (Route::has('register'))
+                          <li><a class='abc' href="{{ route('register') }}">Регистрация</a></li>                 
+                        @endif
 
-                      @else
+                        @else
 
                             <!-- Выход из учетных данных -->
                             <li class="nav-item dropdown ">
-                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre></a>
-                                    {{ Auth::user()->name }}
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('logout') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>                                 
                                 
                                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -66,17 +65,15 @@
                                       document.getElementById('logout-form').submit();">
                                       Выйти
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                  </div>
                             </li>
-
                         @endguest
-                                        </div>
-                                          </div>
-                                            </div>
+                      </div>
+      </div>
+    </div>
 
 <!-- Ряд 1: LOGO -->
       <div class="row1">
