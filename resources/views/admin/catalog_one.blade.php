@@ -23,7 +23,7 @@
                         @if(sizeof($media_arr))
                         @foreach ($media_arr as $key=>$value)
                             <div class="xcontainer">
-                                <img src="{{ $value }}" class="ximage">
+                                <img src="{{ $value }}" class="catalog-img">
                                 <div class="xoverlay">
                                 <a href="{{ asset('adminka/delete_picture/'.$key) }}" class="btn btn-primary" id="edit" type="button">Удалить</a>
                                 </div>

@@ -37,31 +37,23 @@
 .xcontainer {
     float: left;
     position: relative;
-    width: 50%;
-    max-width: 150px;
-    padding: 5px;
-  }
-  
-  .ximage {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .xoverlay {
-    position: absolute; 
-    bottom: 0; 
+    
+}
+
+.xoverlay {
+    position: absolute;
+    bottom: 0;
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
-    color: #f1f1f1; 
-    width: 140px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
     transition: .5s ease;
-    opacity:0;
+    opacity: 0;
     color: white;
     font-size: 17px;
     text-align: center;
-  }
-  
-  .xcontainer:hover .xoverlay {
+}
+
+.xcontainer:hover .xoverlay {
     opacity: 1;
-  }
+}

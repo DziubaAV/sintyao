@@ -44,15 +44,22 @@
                           <div id="Gallery" class="tabcontent">
                             <form action="{{ asset('/adminka/catalog') }}" method="POST">
                               @csrf
-                              <input type="text" name="name" class="">
-<select name="type" id="type">
-  <option value="foto">Фото</option>
-<option value="video">Видео</option>
-</select>
-                              <input type="submit" value="Добавить">
+                              <input type="text" name="name"  placeholder="Введите название альбома">
+                                <select name="type" id="type">
+                                  <option selected value="foto">В фотогалерею</option>
+                                  <option value="video">В видеогалерею</option>
+                                </select>
+
+<br>
+
+                              <input type="submit" value="Добавить альбом">
                             </form>
+
+<br>
+<br>
+<br>
                             
-                            <hr>
+<hr>
                           @foreach($catalogs as $catalog)
                             <span style="font-size: 15px">{{$catalog->name}}</span>
                               <div class="fl_right">

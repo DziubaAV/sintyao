@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6, .heading {
     padding: 0;
     font-size: 40px;
     font-family: 'Cinzel', serif;
-    }
+}
 
 .round {
     width: 65px;
@@ -151,6 +151,7 @@ nav ul {
     padding: 0;
     list-style: none;
 }
+
 
 #mainav {
     line-height: normal;
@@ -215,6 +216,16 @@ nav ul {
     visibility: visible;
     opacity: 1;
 }
+
+/* ВТОРОЕ МЕНЮ */
+nav select {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    nav ul     { display: none; }
+    nav select { display: inline-block; }
+  }
 
 /* Ряды */
 .abc {
@@ -442,22 +453,25 @@ input[type=submit]:hover {
 .catalog-img {
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 5px;
     width: 150px;
+    height: 200px;
+    padding: 5px;
 }
 
 .catalog-img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-/* Media Queries
+/* АДАПТИВ */
+
+/* Медиа-запросы
 --------------------------------------------------------------------------------------------------------------- */
 @-ms-viewport {
     width: device-width;
 }
 
 
-/* Max Wrapper Width - Laptop, Desktop etc.
+/* Максимальная ширина — ноутбук, рабочий стол и т. д.
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width:978px) {
     .hoc {
@@ -465,27 +479,17 @@ input[type=submit]:hover {
     }
 }
 
-/* Other
---------------------------------------------------------------------------------------------------------------- */
-@media screen and (max-width:650px) {
 
-    .inline li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .pushright li {
-        margin-right: 0;
-    }
-}
-
-/* Mobile Devices
+/* Мобильные устройства
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:900px) {
     .hoc {
         max-width: 90%;
     }
 
+    #topbar {}
+
+    #header {}
 
     #mainav {
         padding: 20px 0;
@@ -495,13 +499,51 @@ input[type=submit]:hover {
         display: none;
     }
 
+    #mainav form {
+        display: block;
+    }
+
+    #breadcrumb {}
+
+    .container {}
+
+    #comments input[type="reset"] {
+        margin-top: 10px;
+    }
+
+    .pagination li {
+        display: inline-block;
+        margin: 0 5px 5px 0;
+    }
+
+    #footer {}
+
+    #copyright {}
+
+    #copyright p:first-of-type {
+        margin-bottom: 10px;
+    }
 }
 
 
 @media screen and (max-width:750px) {
+    .imgl, .imgr {
+        display: inline-block;
+        float: none;
+        margin: 0 0 10px 0;
+    }
+
     .fl_left, .fl_right {
         display: block;
         float: none;
+    }
+
+    .one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter {
+        display: block;
+        float: none;
+        width: auto;
+        margin: 0 0 30px 0;
+        padding: 0;
     }
 
     #topbar {
@@ -532,5 +574,54 @@ input[type=submit]:hover {
 
     #header #logo {
         margin: 0 0 30px 0;
+    }
+
+    #pageintro {}
+
+    #pageintro article {
+        float: none;
+        max-width: none;
+        text-align: left;
+    }
+
+    #pageintro article .heading {
+        font-size: 36px;
+    }
+}
+
+
+/* Разное
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:650px) {
+    .scrollable {
+        display: block;
+        width: 100%;
+        margin: 0 0 30px 0;
+        padding: 0 0 15px 0;
+        overflow: auto;
+        overflow-x: scroll;
+    }
+
+    .scrollable table {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .inline li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .pushright li {
+        margin-right: 0;
+    }
+
+    .font-x2 {
+        font-size: 1.4rem;
+    }
+
+    .font-x3 {
+        font-size: 1.6rem;
     }
 }

@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Распознование Гуглом метатеги -->
+    <meta name="description" content="✔Спортивный клуб по единоборствам. Скидки и акции. Звоните!☎✔">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -21,8 +24,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-
-    
 
     @stack('styles') 
     <!-- Scripts -->
@@ -114,8 +115,33 @@
             <li class='fl_right'><a href="{{ asset('adminka') }}">Административная панель</a></li>
             @endif
             @endif
-
             </ul>
+
+
+            <!-- Второе меню, адаптив -->
+            <script>
+              function _go() {
+                location.href=document.getElementById('address').options[document.getElementById('address').selectedIndex].value;
+              }
+            </script>
+
+            <select onchange="_go()" id="address">> 
+                <option value="#" selected="selected">МЕНЮ</option> 
+                <option value="{{ asset('/') }}">Главная</option> 
+                <option value="#">Журнул</option> 
+                <option value="{{ asset('catalog/foto') }}">--Фотогалерея</option> 
+                <option value="{{ asset('catalog/video') }}">--Видеогалерея</option> 
+                <option value="#">О нас</option>
+                <option value="{{ asset('history') }}">--История</option> 
+                <option value="{{ asset('trener') }}">--Тренерский состав</option>
+                <option value="{{ asset('contacts') }}">Контакты</option>
+                <option value="{{ asset('review') }}">Отзывы</option>
+                @if(Auth::user())
+                @if (Auth::user()->is_admin)
+                <option value="{{ asset('review') }}">Административная панель</option>
+                @endif
+                @endif
+            </select> 
         </nav>
               </div>
 
@@ -165,6 +191,6 @@
 
 
 </div>
-</body>
+
 @stack('scripts')  
 </html>
