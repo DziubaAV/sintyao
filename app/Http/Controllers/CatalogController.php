@@ -10,7 +10,7 @@ class CatalogController extends Controller
     public function getIndex($type=''){
         $catalog_name = 'Каталог фотографий';
         if ($type=='video'){
-            $catalog_name = 'Католог видео';
+            $catalog_name = 'Каталог видео';
         }
        $catalogs = Catalog::where('type',$type)->get();
        return view('catalog',compact('catalogs','catalog_name'));
