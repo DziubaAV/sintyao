@@ -35,9 +35,9 @@
                     <div class="tab">                      
                       <button class="tablinks" onclick="openLayout(event, 'Gallery')"> Каталог</button>
                       <button class="tablinks" onclick="openLayout(event, 'Reviews')" id="defaultOpen"> Отзывы</button>
-                      <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>     
-                      <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button>
-                      <button class="tablinks" onclick="openLayout(event, 'News')"> Новости</button>
+                      <!-- <button class="tablinks" onclick="openLayout(event, 'History')"> Истории</button>      -->
+                      <!-- <button class="tablinks" onclick="openLayout(event, 'Coaching_staff')"> Тренерский состав</button> -->
+                      <!-- <button class="tablinks" onclick="openLayout(event, 'News')"> Новости</button> -->
                     </div>
 
                           <!-- Фото и видеогалерея -->

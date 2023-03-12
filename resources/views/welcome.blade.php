@@ -30,7 +30,26 @@
     dots[slideIndex-1].className += " active";
     captionText.innerHTML = dots[slideIndex-1].alt;
     }
-    </script>                 
+    </script>  
+    
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script> 
+
+
 @endpush
 
 @push('styles')
@@ -38,50 +57,58 @@
 @endpush
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="GalleryBody">
+<div class="wrapper bgded">
+  <div id="pageintro" class="hoc clear"> 
 
-                    <h2 style="text-align:center">Галерея слайд-шоу</h2>
+    <article>
+      <div class="overlay inspace-30 btmspace-30">
+      <img class="round " src="{{ asset('/images/SinTyaoBuda.jpg') }}" alt="SinTyaoBuda"></a>
 
-                        <div class="GalleryContainer">
+        <h2 class="heading">СК "Sin Tyao"</h2>
+        <p>"Sin Tyao" — один из первых бойцовских клубов Беларуси, специализирующийся на восточных единоборствах.</p>
+      </div>
+      <footer>
+        <ul class="nospace inline pushright">
+          <li><a class="btn btn-primary" onclick="document.getElementById('subject').style.display='block'">Задать вопрос</a></li>
+        </ul>
+      </footer>
+    </article>
 
-                            @foreach($media_arr as $key=>$value)
-                        <div class="GalleryMySlides">                           
-                            <img src="{{ asset($value) }}" class="catalog-img">
-                            <div class="GalleryOverlay">
-                                <a href="{{ asset('catalog_one/'.$key) }}" class="btn btn-primary">{{ $catalog_arr[$key] }}</a>
-                            </div>
-                            
-                        </div>
-                            @endforeach
-                        
-                            
-                        <a class="GalleryPrev" onclick="plusSlides(-1)">❮</a>
-                        <a class="GalleryNext" onclick="plusSlides(1)">❯</a>
-
-                        <!-- <div class="GalleryCaption-container">
-                            <p id="GalleryCaption"></p>
-                        </div> -->
-
-                        <div class="GalleryRow">
-                        @foreach($media_arr as $key=>$value)
-
-                            <div class="GalleryColumn">
-                            <img class="GalleryDemo GalleryCursor catalog-img" src="{{ asset($value) }}" onclick="currentSlide({{$key}})" alt="{{$key}}">
-                            </div>
-
-                        @endforeach
-
-                        </div>`
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
+
+
+<!-- Цитаты великих боксеров -->
+
+<div class="col-container">
+
+  <div class="col" style="background: #FFFFFF; background-color: rgba(255,255,255,0.5); font-weight: 700;">
+  <img src="{{ asset('/images/tys.png') }}" alt="Майк Тайсон" class="avatar">
+    <h2>Майк Тайсон</h2>
+    <p>«Некоторые парни сейчас слишком бизнес-ориентированы. Когда я дрался, мы не думали о том, останется ли у нас потом хоть доллар за душой»</p>
+    <p>«Я много молюсь, но все равно попаду в ад за всё то, что сделал, но это не мешает мне радоваться жизни здесь и сейчас»</p>
+    <p>«Лучше говорить с набитым ртом, чем молчать с выбитыми зубами»</p>    
+
+  </div>
+
+  <div class="col" style="background: #FFFFFF; background-color: rgba(255,255,255,0.5); font-weight: 700;">
+  <img src="{{ asset('/images/roy.png') }}" alt="Рой Джонс" class="avatar">
+    <h2>Рой Джонс</h2>
+    <p>«Борись до конца, боль временна, триумф вечен!»</p>
+    <p>«Мне весело в бою!»</p>
+    <p>«Настоящие чемпионы – это те, кто, проиграв один бой, в следующем выходят и доказывают, что чего-то стоят»</p>
+
+  </div>
+
+  <div class="col" style="background: #FFFFFF; background-color: rgba(255,255,255,0.5); font-weight: 700;">
+  <img src="{{ asset('/images/m_ali.png') }}" alt="Мухаммед Али" class="avatar">
+    <h2>Мухаммед Али</h2>
+    <p>«Чемпионами становятся не в спортивном зале. Чемпионами становятся от того, что есть глубоко внутри: желание, мечта, видение»</p>
+    <p>«Если вы мечтаете победить меня, вам лучше проснуться и попросить прощения»</p>
+    <p>«Я ненавидел каждую минуту тренировок, но я говорил себе: «Не уходи. Страдай сейчас и живи остаток жизни чемпионом»</p>    
+
+  </div>
+
+</div>
+
 @endsection

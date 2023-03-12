@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">{{ $catalog_name }}</div> 
 
-                      
+              
                 <div class="card-body">
                   @foreach($catalogs as $catalog)
                   <hr>
@@ -19,9 +19,14 @@
                     </form>
                     
                   @endforeach
+
+                  
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
 @endsection

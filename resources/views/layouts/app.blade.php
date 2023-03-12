@@ -34,50 +34,21 @@
 <body>
 <div class='wrapper'>
 <!-- Ряд 0: Регистрация и авторизация -->
-    <div class="row0">
+    <!-- <div class="row0">
       <div id="topbar" class="hoc clear"> 
         <div class="fl_left">
           <ul class="nospace inline pushright">
             <li> <a class='abc' href="tel:+375297654924">+375 29 765-49-24</a></li>
-              <li><a class='abc' href="mailto:zebra-gor@yandex.by" target="_blank">zebra-gor@yandex.by</a></li>
+              <li> <a class='abc' href="mailto:zebra-gor@yandex.by" target="_blank">zebra-gor@yandex.by</a></li>
                 </ul>
         </div>
 
-                    <div class="fl_right">
-                      <ul class="nospace inline pushright">
-                        @guest
-                        @if (Route::has('login'))
-                          <li><a class='abc' href="{{ route('login') }}">Авторизация</a></li>
-  
-                        @endif
-                        @if (Route::has('register'))
-                          <li><a class='abc' href="{{ route('register') }}">Регистрация</a></li>                 
-                        @endif
-
-                        @else
-
-                            <!-- Выход из учетных данных -->
-                            <li class="nav-item dropdown ">
-                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('logout') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>                                 
-                                
-                                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                      onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                                      Выйти
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                  </div>
-                            </li>
-                        @endguest
-                      </div>
+                    
       </div>
-    </div>
+    </div> -->
 
 <!-- Ряд 1: LOGO -->
-      <div class="row1">
+      <!-- <div class="row1">
         <header id="header" class="hoc clear">
           <div class="fl_left">
             <a target="_blank" href="{{ asset('/images/SinTyaoBuda.jpg') }}">
@@ -87,7 +58,7 @@
                     <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
                     </div>
         </header>
-      </div>
+      </div> -->
 
 <!-- Ряд 2: Навигация -->
       <div class="row2">
@@ -108,15 +79,40 @@
             </li>
             <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
             <li><a href=" {{ asset('review') }}">Отзывы</a></li>
-            <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;" href="#">Вопросы ?</a></li>
+            <!-- <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;">Вопросы ?</a></li> -->
             
             @if(Auth::user())
             @if (Auth::user()->is_admin)
-            <li class='fl_right'><a href="{{ asset('adminka') }}">Административная панель</a></li>
+            <li class=''><a href="{{ asset('adminka') }}">Административная панель</a></li>
             @endif
             @endif
-            </ul>
+           
+            <div class='fl_right'>
+            @guest
+                        @if (Route::has('login'))
+                          <li><a href="{{ route('login') }}">Авторизация</a></li>
+  
+                        @endif
+                        @if (Route::has('register'))
+                          <li><a href="{{ route('register') }}">Регистрация</a></li>                 
+                        @endif
 
+                        @else
+
+                            <!-- Выход из учетных данных -->
+                            <li>{{Auth::user()->name }}</li>
+                            <li>  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                              Выйти</a></li>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                              @csrf
+                              </form>   
+                              
+              @endguest
+            </div>
+
+                        
+                        </ul>
 
             <!-- Второе меню, адаптив -->
             <script>
@@ -125,7 +121,7 @@
               }
             </script>
 
-            <select onchange="_go()" id="address">> 
+            <select onchange="_go()" id="address">
                 <option value="#" selected="selected">МЕНЮ</option> 
                 <option value="{{ asset('/') }}">Главная</option> 
                 <option value="#">Журнул</option> 
@@ -181,13 +177,58 @@
           </div> 
   
 <!-- Ряд 6: Подвал -->
-  <div class="footer"><div class="row6">
-    <div id="copyright" class="hoc clear"> 
-      <p class="fl_left">Дипломный проект 2023 - <a href="https://iti.bsuir.by/">© ИИТ БГУИР</a></p>
-        <p class="fl_right"><a>Разработчик: Дзюба АВ</a></p>
-          </div>
-            </div>
-              </div>
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+  <h2 class="heading" style="color: white";>СК "Sin Tyao"</h2>
+
+    <p class="footer-links">
+      <a href="#" class="link-1">Главная</a>
+      <a href="{{ asset('trener')}}">Тренерский состав</a>
+      <a href=" {{ asset('contacts') }} ">Контакты</a>
+    </p>
+
+    <div class="footer-icons">
+
+      <a href="https://vk.com/club4824870" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/evgenysintyao/" target="_blank"><i class="fa fa-instagram"></i></a>
+
+    </div>
+
+    <p class="footer-company-name">СК "Sin Tyao"</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <p><a href="https://goo.gl/maps/DMvXHgVnhCbtkKZT6" target="_blank">г.Минск,ул. Калиновского 82/2</a></p>
+    </div>
+
+    <div>
+      <i class="fa fa-mobile" aria-hidden="true"></i>
+      <p><a href="tel:+375297654924">+375 29 765-49-24</a></p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com" target="_blank">zebra-gor@yandex.by</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+    Наши двери всегда открыты для всех желающих, независимо от пола и возраста.
+    Работают группы младшего, среднего и старшего школьного возраста, группы для взрослых людей.
+    Возможен вариант индивидуальных занятий под руководством действующих чемпионов по К-1 и Muay Thai.</p>
+
+  </div>
+
+</footer>
 
 
 </div>
