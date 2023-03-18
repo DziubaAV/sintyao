@@ -70,6 +70,7 @@
               @else
               <a href="{{ asset('/')}}">Главная</a></li>
               @endif
+
             <li><a href="#">Журнал</a>
                 <ul>
                 <li><a href="{{ asset('catalog/foto') }}">Фотогалерея</a></li>
@@ -82,13 +83,21 @@
                 <li><a href="{{ asset('trener')}}">Тренерский состав</a></li>
               </ul>
             </li>
+
             <li>
-              @if($world == 'review')
+              @if($world == 'price')
               Цена
               @else
-              <a href=" {{ asset('#') }} ">Цена</a></li>
+              <a href=" {{ asset('price') }} ">Цена</a></li>
               @endif
-            <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
+
+            <li>
+            @if($world == 'contacts')
+              Отзывы
+              @else
+              <a href=" {{ asset('contacts') }} ">Контакты</a></li>
+              @endif
+
             <li >
               @if($world == 'review')
               Отзывы
@@ -152,14 +161,16 @@
             <select onchange="_go()" id="address">
                 <option value="#" selected="selected">МЕНЮ</option> 
                 <option value="{{ asset('/') }}">Главная</option> 
-                <option value="#">Журнул</option> 
+                <option value="#">-Журнал</option> 
                 <option value="{{ asset('catalog/foto') }}">--Фотогалерея</option> 
                 <option value="{{ asset('catalog/video') }}">--Видеогалерея</option> 
-                <option value="#">О нас</option>
+                <option value="#">-О нас</option>
                 <option value="{{ asset('history') }}">--История</option> 
                 <option value="{{ asset('trener') }}">--Тренерский состав</option>
                 <option value="{{ asset('contacts') }}">Контакты</option>
+                <option value="{{ asset('price') }}">Цена</option>
                 <option value="{{ asset('review') }}">Отзывы</option>
+
                 @if(Auth::user())
                 @if (Auth::user()->is_admin)
                 <option value="{{ asset('review') }}">Административная панель</option>

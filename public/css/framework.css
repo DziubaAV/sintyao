@@ -820,4 +820,46 @@ section {
 
 }
 
-/* ........................ */
+/* Вкладка цена, таблица */
+.price_table {
+	width: 100%;
+	margin-bottom: 5%;
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+}
+.price_table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.price_table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+@media(max-width: 992px) {
+    .price_table thead {
+        display: none;
+    }
+    .price_table tr {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .price_table td {
+        margin: 0 -1px -1px 0;
+        padding-top: 35px;
+        position: relative;
+        width: 50%;
+    }
+    .price_table td span {
+        display: block;
+    }
+}
+@media(max-width: 480px) {
+    .price_table td {
+        width: 100%;
+    }
+}
