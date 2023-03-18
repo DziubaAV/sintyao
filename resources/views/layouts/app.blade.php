@@ -64,7 +64,12 @@
       <div class="row2">
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
-            <li class="active"><a href="{{ asset('/')}}">Главная</a></li>
+            <li>
+            @if($world == '')
+            Главная
+              @else
+              <a href="{{ asset('/')}}">Главная</a></li>
+              @endif
             <li><a href="#">Журнал</a>
                 <ul>
                 <li><a href="{{ asset('catalog/foto') }}">Фотогалерея</a></li>
@@ -77,13 +82,33 @@
                 <li><a href="{{ asset('trener')}}">Тренерский состав</a></li>
               </ul>
             </li>
+            <li>
+              @if($world == 'review')
+              Цена
+              @else
+              <a href=" {{ asset('#') }} ">Цена</a></li>
+              @endif
             <li><a href=" {{ asset('contacts') }} ">Контакты</a></li>
-            <li><a href=" {{ asset('review') }}">Отзывы</a></li>
+            <li >
+              @if($world == 'review')
+              Отзывы
+              @else
+              <a href=" {{ asset('review') }}">Отзывы</a></li>
+              @endif
+
+             
             <!-- <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;">Вопросы ?</a></li> -->
             
             @if(Auth::user())
             @if (Auth::user()->is_admin)
-            <li class=''><a href="{{ asset('adminka') }}">Административная панель</a></li>
+
+            <li> 
+              @if($world == 'adminka')
+              Административная панель
+              @else
+              <a href="{{ asset('adminka') }}">Административная панель</a>
+              @endif
+              </li>
             @endif
             @endif
            
@@ -100,6 +125,9 @@
                         @else
 
                             <!-- Выход из учетных данных -->
+
+                            <div class="button-container">
+
                             <li>{{Auth::user()->name }}</li>
                             <li>  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                               Выйти</a></li>
@@ -182,33 +210,31 @@
 
   <div class="footer-left">
 
-  <h2 class="heading" style="color: white";>СК "Sin Tyao"</h2>
+  <h2 class="heading" style="color: white">СК "Sin Tyao"</h2>
 
     <p class="footer-links">
-      <a href="#" class="link-1">Главная</a>
+      <a href="/" class="link-1">Главная</a>
       <a href="{{ asset('trener')}}">Тренерский состав</a>
       <a href=" {{ asset('contacts') }} ">Контакты</a>
     </p>
 
     <div class="footer-icons">
-
       <a href="https://vk.com/club4824870" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
       <a href="https://www.instagram.com/evgenysintyao/" target="_blank"><i class="fa fa-instagram"></i></a>
-
     </div>
 
-    <p class="footer-company-name">СК "Sin Tyao"</p>
+    
   </div>
 
   <div class="footer-center">
 
     <div>
-      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <a> <i class="fa fa-map-marker"></i> </a>
       <p><a href="https://goo.gl/maps/DMvXHgVnhCbtkKZT6" target="_blank">г.Минск,ул. Калиновского 82/2</a></p>
     </div>
 
     <div>
-      <i class="fa fa-mobile" aria-hidden="true"></i>
+      <i class="fa fa-mobile"></i>
       <p><a href="tel:+375297654924">+375 29 765-49-24</a></p>
     </div>
 

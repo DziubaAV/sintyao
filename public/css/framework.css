@@ -181,24 +181,24 @@ nav ul {
     position: relative;
     margin: 0 15px 0 0;
     padding: 0;
-    text-decoration: none;
+    
 }
 
 #mainav li:last-child {
     margin-right: 0;
-    text-decoration: none;
+    
 }
 
 #mainav li li {
     width: 100%;
     margin: 0;
-    text-decoration: none;
+    
 }
 
 #mainav li a {
     display: block;
     padding: 20px 0;
-    text-decoration: none;
+   
 }
 
 #mainav li li a {
@@ -819,3 +819,5 @@ section {
 	}
 
 }
+
+/* ........................ */
