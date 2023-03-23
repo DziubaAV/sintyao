@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Catalog;
 use App\Models\Media;
+use App\Models\Video;
+use Auth;
 
 class CatalogController extends Controller
 {
@@ -37,4 +39,13 @@ return redirect()->back();
         return redirect()->back();
 
     }
+
+    public function addVideo (Catalog $catalog, Request $request) {
+        $video = new Video;
+        $video->catalog_id=$catalog->id;
+        $video->user_id=Auth::user()->id;
+        $video->body=$request->video;
+        $video->save();
+        return redirect()->back();
+            }
 }

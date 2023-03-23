@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Стоимость занятий</div>
+                <div class="card-header">Цена</div>
                     <div class="card-body">
                             <h4><strong>Тренировки могут посещать  школьники, студенты и взрослые.</strong>
                             <br>

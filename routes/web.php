@@ -43,6 +43,8 @@ Route::prefix('adminka')->group(function(){
     Route::post('/catalog/',[Controllers\Admin\CatalogController::class, 'postIndex']);
     Route::post('/catalog/{catalog}/add_picture',[Controllers\Admin\CatalogController::class, 'addPicture']);
     Route::get('/delete_picture/{id}',[Controllers\Admin\CatalogController::class, 'destroyPicture']);
+
+    Route::post('/catalog/{catalog}/add_video',[Controllers\Admin\CatalogController::class, 'addVideo']);
 });
 
 Route::get('/{url}',[Controllers\MaintextController::class, 'getUrl']); //всегда в конце

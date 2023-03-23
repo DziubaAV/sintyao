@@ -24,13 +24,12 @@
 @endpush
 
 @section('content')
-<p>Добро пожаловать в административную панель:</p>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">Административная панель</div>
-          <div class='admin_body'>
+          
                 
                     <div class="tab">                      
                       <button class="tablinks" onclick="openLayout(event, 'Gallery')"> Каталог</button>
@@ -82,22 +81,22 @@
                           </div>
 
                           <!-- Истории -->
-                          <div id="History" class="tabcontent">
+                          <!-- <div id="History" class="tabcontent">
                             <h3>История</h3>
                             <p>Редактирвание раздела.</p>    
-                          </div>
+                          </div> -->
 
                           <!-- Тренерский состав  -->
-                          <div id="Coaching_staff" class="tabcontent">
+                          <!-- <div id="Coaching_staff" class="tabcontent">
                               <h3>Тренерский состав</h3>
                               <p>Редактирвание раздела.</p>   
-                          </div>
+                          </div> -->
                           
                           <!-- Новости -->
-                          <div id="News" class="tabcontent">
+                          <!-- <div id="News" class="tabcontent">
                             <h3>Новости</h3>
                             <p>Редактирвание раздела.</p> 
-                          </div>
+                          </div> -->
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
         </div>

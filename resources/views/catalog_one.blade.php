@@ -19,6 +19,12 @@
                 @endif
                 <div>{{ $catalog->body }}</div>
                   
+                @foreach ($catalog->videos as $video)
+
+{!! $video->body !!}
+
+@endforeach
+
                 </div>
             </div>
         </div>

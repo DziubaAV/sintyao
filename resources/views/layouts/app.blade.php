@@ -33,43 +33,19 @@
 
 <body>
 <div class='wrapper'>
-<!-- Ряд 0: Регистрация и авторизация -->
-    <!-- <div class="row0">
-      <div id="topbar" class="hoc clear"> 
-        <div class="fl_left">
-          <ul class="nospace inline pushright">
-            <li> <a class='abc' href="tel:+375297654924">+375 29 765-49-24</a></li>
-              <li> <a class='abc' href="mailto:zebra-gor@yandex.by" target="_blank">zebra-gor@yandex.by</a></li>
-                </ul>
-        </div>
-
-                    
-      </div>
-    </div> -->
-
-<!-- Ряд 1: LOGO -->
-      <!-- <div class="row1">
-        <header id="header" class="hoc clear">
-          <div class="fl_left">
-            <a target="_blank" href="{{ asset('/images/SinTyaoBuda.jpg') }}">
-              <img class="round" src="{{ asset('/images/SinTyaoBuda.jpg') }}" alt="SinTyaoBuda"></a>
-                </div>
-                  <div id="logo" class="fl_left">
-                    <h1><a href="{{ asset('/') }}">SIN TYAO</a></h1>
-                    </div>
-        </header>
-      </div> -->
 
 <!-- Ряд 2: Навигация -->
       <div class="row2">
+
         <nav id="mainav" class="hoc clear"> 
           <ul class="clear">
-            <li>
+            
+          <li>
             @if($world == '')
             Главная
-              @else
-              <a href="{{ asset('/')}}">Главная</a></li>
-              @endif
+            @else
+            <a href="{{ asset('/')}}">Главная</a></li>
+            @endif
 
             <li><a href="#">Журнал</a>
                 <ul>
@@ -77,6 +53,7 @@
                 <li><a href="{{ asset('catalog/video') }}">Видеогалерея</a></li>
                 </ul>
             </li>
+
             <li><a href="#">О нас</a>
               <ul>
                 <li><a href="{{ asset('history')}}">История</a></li>
@@ -92,34 +69,37 @@
               @endif
 
             <li>
-            @if($world == 'contacts')
-              Отзывы
+              @if($world == 'contacts')
+              Контакты
               @else
               <a href=" {{ asset('contacts') }} ">Контакты</a></li>
               @endif
 
-            <li >
+            <li>
               @if($world == 'review')
               Отзывы
               @else
-              <a href=" {{ asset('review') }}">Отзывы</a></li>
+              <a href=" {{ asset('review') }}">Отзывы</a>
               @endif
-
-             
-            <!-- <li><a onclick="document.getElementById('subject').style.display='block'" style="width:auto;">Вопросы ?</a></li> -->
-            
-            @if(Auth::user())
-            @if (Auth::user()->is_admin)
+              </li>
+              
+              <li>
+              <a href="#"></a></li>
+              
+           
+              @if (Auth::user())
+              @if (Auth::user()->is_admin)
 
             <li> 
               @if($world == 'adminka')
               Административная панель
               @else
-              <a href="{{ asset('adminka') }}">Административная панель</a>
+              <a href="{{ asset('adminka') }}">Административная панель</a></li>
               @endif
-              </li>
+              
             @endif
             @endif
+            
            
             <div class='fl_right'>
             @guest
@@ -138,19 +118,17 @@
                             <div class="button-container">
 
                             <li>{{Auth::user()->name }}</li>
-                            <li>  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                              Выйти</a></li>
+                            <li>  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выйти</a></li>
 
                               <form id="logout-form" action="{{ route('logout') }}" method="POST">
                               @csrf
-                              </form>   
-                              
-              @endguest
+                              </form>              
+                            </div>
             </div>
+            @endguest
 
-                        
                         </ul>
-
+                        
             <!-- Второе меню, адаптив -->
             <script>
               function _go() {
@@ -270,5 +248,7 @@
 
 </div>
 
-@stack('scripts')  
+@stack('scripts')
+
+</body> 
 </html>
