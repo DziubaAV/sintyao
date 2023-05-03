@@ -1,4 +1,4 @@
-Демонстрация проекта в короткой гифке: https://github.com/DziubaAV/sintyao/blob/master/SinTyao.gif
+Demonstration of the project in a short GIF:: https://github.com/DziubaAV/sintyao/blob/master/SinTyao.gif
 
 ## About project
 Сайт спортивного клуба "Sin Tyao"
