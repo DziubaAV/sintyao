@@ -1,5 +1,5 @@
 ## About project
-СК "SIN TYAO"
+Сайт спортивного клуба "Sin Tyao"
 
 ## Used technologies
 - MySQL
